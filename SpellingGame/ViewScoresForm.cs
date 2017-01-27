@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SpellingGame
 {
-    public partial class Form1 : Form
+    public partial class ViewScoresForm : Form
     {
-        public Form1()
+        public ViewScoresForm()
         {
             InitializeComponent();
         }
