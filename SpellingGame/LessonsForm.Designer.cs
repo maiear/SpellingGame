@@ -52,6 +52,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(511, 277);
             this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Selectbutton
             // 
@@ -62,6 +63,7 @@
             this.Selectbutton.TabIndex = 2;
             this.Selectbutton.Text = "Select";
             this.Selectbutton.UseVisualStyleBackColor = true;
+            this.Selectbutton.Click += new System.EventHandler(this.Selectbutton_Click);
             // 
             // LessonsForm
             // 
@@ -70,6 +72,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Name = "LessonsForm";
+            this.Load += new System.EventHandler(this.LessonsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

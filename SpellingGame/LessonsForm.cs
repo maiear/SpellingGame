@@ -29,11 +29,21 @@ namespace SpellingGame
             }
         }
 
-        
-      
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
 
-       
+        }
 
-        
+        private void LessonsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Selectbutton_Click(object sender, EventArgs e)
+        {
+            ViewRuleForm F2 = new ViewRuleForm(listBox1.SelectedIndex + 1);
+            F2.Show();
+        }
     }
 }
