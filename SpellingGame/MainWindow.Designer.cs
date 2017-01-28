@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.label2 = new System.Windows.Forms.Label();
             this.LessonButton = new System.Windows.Forms.Button();
-            this.Testbutton1 = new System.Windows.Forms.Button();
-            this.ViewScoresbutton1 = new System.Windows.Forms.Button();
-            this.Practicebutton1 = new System.Windows.Forms.Button();
+            this.TestButton = new System.Windows.Forms.Button();
+            this.ViewScoresButton = new System.Windows.Forms.Button();
+            this.PracticeButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -41,10 +41,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Ravie", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(60, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(386, 54);
+            this.label2.Size = new System.Drawing.Size(423, 69);
             this.label2.TabIndex = 0;
             this.label2.Text = "Spelling Game";
             // 
@@ -59,38 +59,38 @@
             this.LessonButton.UseVisualStyleBackColor = true;
             this.LessonButton.Click += new System.EventHandler(this.LessonButton_Click);
             // 
-            // Testbutton1
+            // TestButton
             // 
-            this.Testbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Testbutton1.Location = new System.Drawing.Point(69, 275);
-            this.Testbutton1.Name = "Testbutton1";
-            this.Testbutton1.Size = new System.Drawing.Size(146, 46);
-            this.Testbutton1.TabIndex = 3;
-            this.Testbutton1.Text = "Test";
-            this.Testbutton1.UseVisualStyleBackColor = true;
-            this.Testbutton1.Click += new System.EventHandler(this.Testbutton1_Click);
+            this.TestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestButton.Location = new System.Drawing.Point(69, 275);
+            this.TestButton.Name = "TestButton";
+            this.TestButton.Size = new System.Drawing.Size(146, 46);
+            this.TestButton.TabIndex = 3;
+            this.TestButton.Text = "Test";
+            this.TestButton.UseVisualStyleBackColor = true;
+            this.TestButton.Click += new System.EventHandler(this.Testbutton1_Click);
             // 
-            // ViewScoresbutton1
+            // ViewScoresButton
             // 
-            this.ViewScoresbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewScoresbutton1.Location = new System.Drawing.Point(271, 275);
-            this.ViewScoresbutton1.Name = "ViewScoresbutton1";
-            this.ViewScoresbutton1.Size = new System.Drawing.Size(146, 46);
-            this.ViewScoresbutton1.TabIndex = 4;
-            this.ViewScoresbutton1.Text = "View Scores";
-            this.ViewScoresbutton1.UseVisualStyleBackColor = true;
-            this.ViewScoresbutton1.Click += new System.EventHandler(this.ViewScoresbutton1_Click);
+            this.ViewScoresButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewScoresButton.Location = new System.Drawing.Point(271, 275);
+            this.ViewScoresButton.Name = "ViewScoresButton";
+            this.ViewScoresButton.Size = new System.Drawing.Size(146, 46);
+            this.ViewScoresButton.TabIndex = 4;
+            this.ViewScoresButton.Text = "View Scores";
+            this.ViewScoresButton.UseVisualStyleBackColor = true;
+            this.ViewScoresButton.Click += new System.EventHandler(this.ViewScoresbutton1_Click);
             // 
-            // Practicebutton1
+            // PracticeButton
             // 
-            this.Practicebutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Practicebutton1.Location = new System.Drawing.Point(271, 192);
-            this.Practicebutton1.Name = "Practicebutton1";
-            this.Practicebutton1.Size = new System.Drawing.Size(146, 46);
-            this.Practicebutton1.TabIndex = 2;
-            this.Practicebutton1.Text = "Practice";
-            this.Practicebutton1.UseVisualStyleBackColor = true;
-            this.Practicebutton1.Click += new System.EventHandler(this.Practicebutton1_Click);
+            this.PracticeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PracticeButton.Location = new System.Drawing.Point(271, 192);
+            this.PracticeButton.Name = "PracticeButton";
+            this.PracticeButton.Size = new System.Drawing.Size(146, 46);
+            this.PracticeButton.TabIndex = 2;
+            this.PracticeButton.Text = "Practice";
+            this.PracticeButton.UseVisualStyleBackColor = true;
+            this.PracticeButton.Click += new System.EventHandler(this.Practicebutton1_Click);
             // 
             // pictureBox2
             // 
@@ -104,9 +104,9 @@
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(503, 414);
-            this.Controls.Add(this.ViewScoresbutton1);
-            this.Controls.Add(this.Testbutton1);
-            this.Controls.Add(this.Practicebutton1);
+            this.Controls.Add(this.ViewScoresButton);
+            this.Controls.Add(this.TestButton);
+            this.Controls.Add(this.PracticeButton);
             this.Controls.Add(this.LessonButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
@@ -122,9 +122,9 @@
         
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button LessonButton;
-        private System.Windows.Forms.Button Testbutton1;
-        private System.Windows.Forms.Button ViewScoresbutton1;
-        private System.Windows.Forms.Button Practicebutton1;
+        private System.Windows.Forms.Button TestButton;
+        private System.Windows.Forms.Button ViewScoresButton;
+        private System.Windows.Forms.Button PracticeButton;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
