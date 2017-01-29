@@ -41,10 +41,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 56);
+            this.label2.Font = new System.Drawing.Font("Ravie", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(423, 69);
+            this.label2.Size = new System.Drawing.Size(386, 54);
             this.label2.TabIndex = 0;
             this.label2.Text = "Spelling Game";
             // 

@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(1209, 588);
+            this.webBrowser.TabIndex = 0;
+            this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             // 
             // ViewRuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 507);
+            this.ClientSize = new System.Drawing.Size(1209, 588);
+            this.Controls.Add(this.webBrowser);
             this.Name = "ViewRuleForm";
             this.Text = "ViewRuleForm";
             this.Load += new System.EventHandler(this.ViewRuleForm_Load);
@@ -43,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }
