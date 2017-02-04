@@ -144,7 +144,7 @@
     <EmbeddedResource Include="ViewScoresForm.resx">
       <DependentUpon>ViewScoresForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Database.db">
+    <None Include="Data\Database.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
