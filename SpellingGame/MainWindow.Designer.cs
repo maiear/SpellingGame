@@ -90,7 +90,7 @@
             this.PracticeButton.TabIndex = 2;
             this.PracticeButton.Text = "Practice";
             this.PracticeButton.UseVisualStyleBackColor = true;
-            this.PracticeButton.Click += new System.EventHandler(this.Practicebutton1_Click);
+            this.PracticeButton.Click += new System.EventHandler(this.PracticeButton_Click);
             // 
             // pictureBox2
             // 

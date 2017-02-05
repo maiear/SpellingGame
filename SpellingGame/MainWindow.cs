@@ -23,7 +23,7 @@ namespace SpellingGame
             lessonfrm.Show();
         }
 
-        private void Practicebutton1_Click(object sender, EventArgs e)
+        private void PracticeButton_Click(object sender, EventArgs e)
         {
             PracticeForm practicefrm = new PracticeForm();
             practicefrm.Show();
