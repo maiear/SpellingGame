@@ -15,6 +15,21 @@ namespace SpellingGame
         public TestForm()
         {
             InitializeComponent();
+        }       
+
+        private void btnCheckSpelling_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAudio_Click(object sender, EventArgs e)
+        {
+            playAudioForCurrentWord();
+        }
+
+        private void playAudioForCurrentWord()
+        {
+            
         }
     }
 }
