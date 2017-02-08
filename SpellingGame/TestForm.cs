@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace SpellingGame
 {
-    public partial class TestForm : Form
+    public partial class testForm : Form
     {
-        public TestForm()
+        public testForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCheckSpelling_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAudio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
