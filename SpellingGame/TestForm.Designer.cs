@@ -1,6 +1,6 @@
 ﻿namespace SpellingGame
 {
-    partial class testForm
+    partial class TestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -93,7 +93,7 @@
             this.lblSentence.TabIndex = 7;
             this.lblSentence.Text = "Sentence goes here";
             // 
-            // testForm
+            // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +104,7 @@
             this.Controls.Add(this.lblSpelling);
             this.Controls.Add(this.txtSpelling);
             this.Controls.Add(this.pictureBoxWord);
-            this.Name = "testForm";
+            this.Name = "TestForm";
             this.Text = "Test in progress! - Time goes here maybe";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWord)).EndInit();
             this.ResumeLayout(false);

@@ -31,7 +31,7 @@ namespace SpellingGame
 
         private void Testbutton1_Click(object sender, EventArgs e)
         {
-            testForm testfrm = new testForm();
+            TestForm testfrm = new TestForm();
             testfrm.Show();
         }
 
