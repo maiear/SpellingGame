@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(testForm));
             this.pictureBoxWord = new System.Windows.Forms.PictureBox();
             this.txtSpelling = new System.Windows.Forms.TextBox();
             this.lblSpelling = new System.Windows.Forms.Label();
@@ -66,9 +65,9 @@
             // 
             // btnCheckSpelling
             // 
-            this.btnCheckSpelling.Location = new System.Drawing.Point(146, 355);
+            this.btnCheckSpelling.Location = new System.Drawing.Point(146, 366);
             this.btnCheckSpelling.Name = "btnCheckSpelling";
-            this.btnCheckSpelling.Size = new System.Drawing.Size(158, 30);
+            this.btnCheckSpelling.Size = new System.Drawing.Size(158, 40);
             this.btnCheckSpelling.TabIndex = 5;
             this.btnCheckSpelling.Text = "Check Spelling";
             this.btnCheckSpelling.UseVisualStyleBackColor = true;
@@ -76,7 +75,7 @@
             // 
             // btnAudio
             // 
-            this.btnAudio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAudio.BackgroundImage")));
+            this.btnAudio.BackgroundImage = global::SpellingGame.Properties.Resources.audio_icon;
             this.btnAudio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAudio.Location = new System.Drawing.Point(551, 27);
             this.btnAudio.Name = "btnAudio";
@@ -98,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 414);
+            this.ClientSize = new System.Drawing.Size(666, 433);
             this.Controls.Add(this.lblSentence);
             this.Controls.Add(this.btnAudio);
             this.Controls.Add(this.btnCheckSpelling);
@@ -106,7 +105,7 @@
             this.Controls.Add(this.txtSpelling);
             this.Controls.Add(this.pictureBoxWord);
             this.Name = "testForm";
-            this.Text = "Test in progress!";
+            this.Text = "Test in progress! - Time goes here maybe";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWord)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

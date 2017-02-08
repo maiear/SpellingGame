@@ -15,12 +15,7 @@ namespace SpellingGame
         public testForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        }       
 
         private void btnCheckSpelling_Click(object sender, EventArgs e)
         {
@@ -29,7 +24,12 @@ namespace SpellingGame
 
         private void btnAudio_Click(object sender, EventArgs e)
         {
+            playAudioForCurrentWord();
+        }
 
+        private void playAudioForCurrentWord()
+        {
+            
         }
     }
 }
