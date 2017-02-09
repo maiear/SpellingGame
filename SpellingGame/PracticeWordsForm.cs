@@ -25,5 +25,10 @@ namespace SpellingGame
             this.category = category;
             this.numberOfWords = numberOfWords;
         }
+
+        private void PracticeWordsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
