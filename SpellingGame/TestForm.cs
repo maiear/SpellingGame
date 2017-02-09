@@ -21,6 +21,10 @@ namespace SpellingGame
         {
 
         }
+        private Boolean spellCheck(String s1, String s2)
+        {
+            return s1.Equals(s2);
+        }
 
         private void btnAudio_Click(object sender, EventArgs e)
         {
