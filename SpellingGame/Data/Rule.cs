@@ -17,12 +17,16 @@ namespace SpellingGame.Data
 
         public long RuleId { get; set; }
 
-        [Required]
+        [StringLength(2147483647)]
+        public string RuleName { get; set; }
+
         [StringLength(2147483647)]
         public string RuleDescription { get; set; }
 
+        [StringLength(2147483647)]
+        public string RuleShortVersion { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Word> Words { get; set; }
-        public string RuleName { get; internal set; }
     }
 }
