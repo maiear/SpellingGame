@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+//using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,6 +28,7 @@ namespace SpellingGame
             this.numberOfWords = numberOfWords;
         }
         Data.Word word;
+        string rulesHtml = "";
 
         private void PracticeWordsForm_Load(object sender, EventArgs e)
         {
@@ -46,12 +47,28 @@ namespace SpellingGame
                 word = allWordsInACategory[index];
                 allWordsInACategory.RemoveAt(index);
 
+                // Get the rules
+
+                foreach (Data.Rule rule in word.Rules)
+                {
+                    rulesHtml += rule.RuleShortVersion;
+                }
+
                 // Show picture
-                pictureBoxPractice.Image = null;// new Bitmap(// word.Image;
+                if (word.Image != null)
+                {
+
+                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(word.Image))
+                    {
+                        pictureBoxPractice.Image = Image.FromStream(ms);
+
+                    }
+                }
+                
                 // Show sentence
                 sentenceLabel.Text = word.Sentence;
 
-
+                
             }
 
         }
@@ -69,36 +86,28 @@ namespace SpellingGame
             if(wordTextBox.Text == word.Word1)
             {
                 // Change the color of the font
-                resultLabel.ForeColor = System.Drawing.Color.Green;
+                resultLabel.ForeColor = Color.Green;
                 // Displays "Correct!"
                 resultLabel.Text = "Correct!";
             }
             else
             {
                 // Changes the color of the font
-                resultLabel.ForeColor = System.Drawing.Color.Red;
+                resultLabel.ForeColor = Color.Red;
                 // Displays "incorrect!"
                 resultLabel.Text = "Incorrect";
 
             }
 
-         
-            // Connect to database
-            using (var db = new Data.Database())
-            {
-                // Get the rules
-                long categoryId = db.Categories.Single(c => c.CategoryDescription == this.category).CategoryId;
-                // Get the list of words in a specific category as objects
-                // List<Data.Rule> applicableRules = db.Rules.Where(w => w.RuleId == ).ToList();
+            webBrowser1.Navigate("about:blank");
 
-                
-            }
+            
+        }
+        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
 
             // Displays the show version of the rules
-            //webBrowser1.Document.Body.InnerHtml = ;
-
-
-
+            webBrowser1.Document.Body.InnerHtml = rulesHtml;
 
         }
     }

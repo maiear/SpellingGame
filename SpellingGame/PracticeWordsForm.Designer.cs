@@ -47,6 +47,7 @@
             this.pictureBoxPractice.Location = new System.Drawing.Point(42, 50);
             this.pictureBoxPractice.Name = "pictureBoxPractice";
             this.pictureBoxPractice.Size = new System.Drawing.Size(241, 163);
+            this.pictureBoxPractice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPractice.TabIndex = 0;
             this.pictureBoxPractice.TabStop = false;
             // 
@@ -96,6 +97,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(570, 130);
             this.webBrowser1.TabIndex = 11;
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
             // 
             // nextbutton
             // 
@@ -145,8 +147,7 @@
             // 
             // PracticeWordsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(655, 561);
             this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.sentenceLabel);
