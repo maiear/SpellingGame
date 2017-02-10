@@ -22,10 +22,6 @@ namespace SpellingGame.Data
         [StringLength(2147483647)]
         public string Word1 { get; set; }
 
-        [Required]
-        [StringLength(2147483647)]
-        public string Spanish { get; set; }
-
         public long CategoryId { get; set; }
 
         [MaxLength(2147483647)]
