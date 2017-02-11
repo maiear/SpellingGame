@@ -54,7 +54,7 @@
             this.noWordsListBox.ItemHeight = 19;
             this.noWordsListBox.Location = new System.Drawing.Point(319, 153);
             this.noWordsListBox.Name = "noWordsListBox";
-            this.noWordsListBox.Size = new System.Drawing.Size(196, 99);
+            this.noWordsListBox.Size = new System.Drawing.Size(196, 137);
             this.noWordsListBox.TabIndex = 1;
             // 
             // categoryListBox
@@ -71,7 +71,7 @@
             // 
             this.categoryLabel.AutoSize = true;
             this.categoryLabel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryLabel.Location = new System.Drawing.Point(74, 121);
+            this.categoryLabel.Location = new System.Drawing.Point(62, 121);
             this.categoryLabel.Name = "categoryLabel";
             this.categoryLabel.Size = new System.Drawing.Size(79, 19);
             this.categoryLabel.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             this.NoWordsLabel.AutoSize = true;
             this.NoWordsLabel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoWordsLabel.Location = new System.Drawing.Point(342, 121);
+            this.NoWordsLabel.Location = new System.Drawing.Point(325, 121);
             this.NoWordsLabel.Name = "NoWordsLabel";
             this.NoWordsLabel.Size = new System.Drawing.Size(141, 19);
             this.NoWordsLabel.TabIndex = 4;
