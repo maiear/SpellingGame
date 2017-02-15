@@ -163,7 +163,7 @@
             this.Controls.Add(this.btnAudio);
             this.Controls.Add(this.pictureBoxPractice);
             this.Name = "PracticeWordsForm";
-            this.Text = "PracticeWordsForm";
+            this.Text = "Practice";
             this.Load += new System.EventHandler(this.PracticeWordsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPractice)).EndInit();
             this.ResumeLayout(false);

@@ -120,7 +120,7 @@
             this.Controls.Add(this.noWordsListBox);
             this.Controls.Add(this.label1);
             this.Name = "PracticeForm";
-            this.Text = "PracticeForm";
+            this.Text = "Practice";
             this.Load += new System.EventHandler(this.PracticeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

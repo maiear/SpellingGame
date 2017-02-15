@@ -28,7 +28,7 @@ namespace SpellingGame
             this.numberOfWords = numberOfWords;
         }
         private Data.Word word;
-        private string rulesHtml = "";
+        private string rulesHtml;
         private int counter = 1;
         private List<Data.Word> allWordsInACategory;
 
@@ -53,7 +53,7 @@ namespace SpellingGame
         {
             // Speaks the word
             SpeechSynthesizer synthesizer = new SpeechSynthesizer();
-            synthesizer.Speak(word.Word1);
+            synthesizer.Speak("The word is: " + word.Word1);
 
         }
 
@@ -126,7 +126,7 @@ namespace SpellingGame
 
             // Get the rules
 
-
+            rulesHtml = "";
             foreach (Data.Rule rule in word.Rules)
             {
                 // Gets the rules of the word
