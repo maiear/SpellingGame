@@ -55,7 +55,8 @@
             // 
             this.s0.AutoSize = true;
             this.s0.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s0.Location = new System.Drawing.Point(100, 108);
+            this.s0.ForeColor = System.Drawing.Color.Gold;
+            this.s0.Location = new System.Drawing.Point(99, 108);
             this.s0.Name = "s0";
             this.s0.Size = new System.Drawing.Size(65, 20);
             this.s0.TabIndex = 1;
@@ -65,7 +66,8 @@
             // 
             this.s1.AutoSize = true;
             this.s1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s1.Location = new System.Drawing.Point(100, 158);
+            this.s1.ForeColor = System.Drawing.Color.Silver;
+            this.s1.Location = new System.Drawing.Point(105, 158);
             this.s1.Name = "s1";
             this.s1.Size = new System.Drawing.Size(65, 20);
             this.s1.TabIndex = 2;
@@ -75,7 +77,8 @@
             // 
             this.s2.AutoSize = true;
             this.s2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s2.Location = new System.Drawing.Point(100, 198);
+            this.s2.ForeColor = System.Drawing.Color.FromArgb(205, 127, 50); //Bronze
+            this.s2.Location = new System.Drawing.Point(110, 198);
             this.s2.Name = "s2";
             this.s2.Size = new System.Drawing.Size(65, 20);
             this.s2.TabIndex = 3;
@@ -85,7 +88,7 @@
             // 
             this.s3.AutoSize = true;
             this.s3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s3.Location = new System.Drawing.Point(100, 232);
+            this.s3.Location = new System.Drawing.Point(114, 232);
             this.s3.Name = "s3";
             this.s3.Size = new System.Drawing.Size(65, 20);
             this.s3.TabIndex = 3;
@@ -95,7 +98,7 @@
             // 
             this.s4.AutoSize = true;
             this.s4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s4.Location = new System.Drawing.Point(100, 252);
+            this.s4.Location = new System.Drawing.Point(114, 252);
             this.s4.Name = "s4";
             this.s4.Size = new System.Drawing.Size(65, 20);
             this.s4.TabIndex = 3;
@@ -105,7 +108,7 @@
             // 
             this.s5.AutoSize = true;
             this.s5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s5.Location = new System.Drawing.Point(100, 272);
+            this.s5.Location = new System.Drawing.Point(114, 272);
             this.s5.Name = "s5";
             this.s5.Size = new System.Drawing.Size(65, 20);
             this.s5.TabIndex = 3;
@@ -115,7 +118,7 @@
             // 
             this.s6.AutoSize = true;
             this.s6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s6.Location = new System.Drawing.Point(100, 292);
+            this.s6.Location = new System.Drawing.Point(114, 292);
             this.s6.Name = "s6";
             this.s6.Size = new System.Drawing.Size(65, 20);
             this.s6.TabIndex = 3;
@@ -125,7 +128,7 @@
             // 
             this.s7.AutoSize = true;
             this.s7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s7.Location = new System.Drawing.Point(100, 312);
+            this.s7.Location = new System.Drawing.Point(114, 312);
             this.s7.Name = "s7";
             this.s7.Size = new System.Drawing.Size(65, 20);
             this.s7.TabIndex = 3;
@@ -135,7 +138,7 @@
             // 
             this.s8.AutoSize = true;
             this.s8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s8.Location = new System.Drawing.Point(100, 332);
+            this.s8.Location = new System.Drawing.Point(114, 332);
             this.s8.Name = "s8";
             this.s8.Size = new System.Drawing.Size(65, 20);
             this.s8.TabIndex = 3;
