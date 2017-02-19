@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBoxWord = new System.Windows.Forms.PictureBox();
-            this.txtSpelling = new System.Windows.Forms.TextBox();
             this.lblSpelling = new System.Windows.Forms.Label();
-            this.btnCheckSpelling = new System.Windows.Forms.Button();
+            this.btnStartTest = new System.Windows.Forms.Button();
             this.btnAudio = new System.Windows.Forms.Button();
             this.lblSentence = new System.Windows.Forms.Label();
             this.btnFeedback = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
+            this.txtSpelling = new System.Windows.Forms.TextBox();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbltimerDisplay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWord)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,15 +54,6 @@
             this.pictureBoxWord.TabStop = false;
             this.pictureBoxWord.Click += new System.EventHandler(this.pictureBoxWord_Click);
             // 
-            // txtSpelling
-            // 
-            this.txtSpelling.Location = new System.Drawing.Point(97, 210);
-            this.txtSpelling.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSpelling.Name = "txtSpelling";
-            this.txtSpelling.Size = new System.Drawing.Size(173, 20);
-            this.txtSpelling.TabIndex = 3;
-            this.txtSpelling.TextChanged += new System.EventHandler(this.txtSpelling_TextChanged);
-            // 
             // lblSpelling
             // 
             this.lblSpelling.Location = new System.Drawing.Point(18, 210);
@@ -68,16 +63,16 @@
             this.lblSpelling.TabIndex = 4;
             this.lblSpelling.Text = "Enter Spelling:";
             // 
-            // btnCheckSpelling
+            // btnStartTest
             // 
-            this.btnCheckSpelling.Location = new System.Drawing.Point(131, 240);
-            this.btnCheckSpelling.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCheckSpelling.Name = "btnCheckSpelling";
-            this.btnCheckSpelling.Size = new System.Drawing.Size(105, 26);
-            this.btnCheckSpelling.TabIndex = 5;
-            this.btnCheckSpelling.Text = "Check Spelling";
-            this.btnCheckSpelling.UseVisualStyleBackColor = true;
-            this.btnCheckSpelling.Click += new System.EventHandler(this.btnCheckSpelling_Click);
+            this.btnStartTest.Location = new System.Drawing.Point(131, 240);
+            this.btnStartTest.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStartTest.Name = "btnStartTest";
+            this.btnStartTest.Size = new System.Drawing.Size(105, 26);
+            this.btnStartTest.TabIndex = 5;
+            this.btnStartTest.Text = "Start Test";
+            this.btnStartTest.UseVisualStyleBackColor = true;
+            this.btnStartTest.Click += new System.EventHandler(this.btnStartTest_Click);
             // 
             // btnAudio
             // 
@@ -115,24 +110,52 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(337, 184);
+            this.lblScore.Location = new System.Drawing.Point(351, 187);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(45, 13);
             this.lblScore.TabIndex = 10;
             this.lblScore.Text = "lblScore";
+            // 
+            // txtSpelling
+            // 
+            this.txtSpelling.Location = new System.Drawing.Point(98, 210);
+            this.txtSpelling.Name = "txtSpelling";
+            this.txtSpelling.Size = new System.Drawing.Size(197, 20);
+            this.txtSpelling.TabIndex = 11;
+            this.txtSpelling.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForReturnKey);
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(373, 85);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(33, 13);
+            this.lblTimer.TabIndex = 13;
+            this.lblTimer.Text = "Timer";
+            // 
+            // lbltimerDisplay
+            // 
+            this.lbltimerDisplay.AutoSize = true;
+            this.lbltimerDisplay.Location = new System.Drawing.Point(373, 122);
+            this.lbltimerDisplay.Name = "lbltimerDisplay";
+            this.lbltimerDisplay.Size = new System.Drawing.Size(17, 13);
+            this.lbltimerDisplay.TabIndex = 14;
+            this.lbltimerDisplay.Text = "";
             // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 281);
+            this.Controls.Add(this.lbltimerDisplay);
+            this.Controls.Add(this.lblTimer);
+            this.Controls.Add(this.txtSpelling);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnFeedback);
             this.Controls.Add(this.lblSentence);
             this.Controls.Add(this.btnAudio);
-            this.Controls.Add(this.btnCheckSpelling);
+            this.Controls.Add(this.btnStartTest);
             this.Controls.Add(this.lblSpelling);
-            this.Controls.Add(this.txtSpelling);
             this.Controls.Add(this.pictureBoxWord);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TestForm";
@@ -146,12 +169,15 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBoxWord;
-        private System.Windows.Forms.TextBox txtSpelling;
         private System.Windows.Forms.Label lblSpelling;
-        private System.Windows.Forms.Button btnCheckSpelling;
+        private System.Windows.Forms.Button btnStartTest;
         private System.Windows.Forms.Button btnAudio;
         private System.Windows.Forms.Label lblSentence;
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.TextBox txtSpelling;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbltimerDisplay;
     }
 }
