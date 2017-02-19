@@ -22,7 +22,7 @@ namespace SpellingGame
         private Data.Word word;
         private int bankFillCount = 0;
         private int score = 0;
-        private int testWordIndex = 4;
+        private int testWordIndex = 0;
         private static int numberOfTries = 3;
         private List<long> wordIdentList = new List<long>();
         private List<Data.Word> incorrectWords = new List<Data.Word>();
@@ -30,52 +30,54 @@ namespace SpellingGame
 
         private void TestWordsForm_Load()
         {
-            // Connect to database
-            using (var db = new Data.Database())
-            {
-                while(bankFillCount < 5){
-                    // Get 5 words randomly chosen form the entire list
-                    Random rnd = new Random();
+            // Load all of the word IDs into wordIdentList in random order
+            Random rnd = new Random();
+            while (bankFillCount < 562){
                     long wordIdent = rnd.Next(562);
                     if (wordIdentList.Contains(wordIdent)){
-                        continue;
+                        continue; //doesn't add a repeated ID to the list
                     }
                     wordIdentList.Add(wordIdent);
-                    testWordBank.Add(db.Words.Find(wordIdent));
                     bankFillCount++;
                 }
-            }
+            
             txtSpelling.Enabled = false;
             btnCheckSpelling.Enabled = false;
             btnFeedback.Enabled = false;
-            lblSentence.Text = "Click on the play audio button to start the test.";
+            lblSentence.Text = "Click the audio button to begin.";
             lblScore.Text = "Score: " + score;
         }
 
         private void loadTestWord()
         {
-            // Cycle through each word chosen from the word bank. testWordIndex is initialized to 0
-            if (testWordIndex >= 0)
+            // Cycle back through the word IDs chosen from the word bank. testWordIndex is initialized to 562
+            long currentTestWordID = wordIdentList.ElementAt(testWordIndex);
+
+            //Open a DB connection and pull the word with the matching wordID as the next test item
+            using (var db = new Data.Database())
             {
-                word = testWordBank[testWordIndex];
-                lblWordCount.Text = "Words left:" + testWordIndex;
-                // Show picture
-                if (word.Image != null)
-                {
-                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(word.Image))
-                    {
-                        pictureBoxWord.Image = Image.FromStream(ms);
-                    }
-                }
-                else
-                {
-                    // Hides the previous picture
-                    pictureBoxWord.Image = null;
-                }
-                // Show sentence
-                lblSentence.ForeColor = Color.Black;
-                lblSentence.Text = word.Sentence;
+                word = db.Words.Find(currentTestWordID);
             }
+
+            if (testWordIndex >= 0)
+                {
+                    // Show picture
+                    if (word.Image != null)
+                    {
+                        using (System.IO.MemoryStream ms = new System.IO.MemoryStream(word.Image))
+                        {
+                            pictureBoxWord.Image = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        // Hides the previous picture
+                        pictureBoxWord.Image = null;
+                    }
+                    // Show sentence
+                    lblSentence.ForeColor = Color.Black;
+                    lblSentence.Text = word.Sentence;
+                }
 
             if (testWordIndex < 0)
             {
@@ -111,14 +113,15 @@ namespace SpellingGame
                         if (spellCheckResult == false && numberOfTries == 0)
                         {
                             lblSentence.Text = "That was your last chance!  Click on the audio button for the next word";
-                            testWordIndex--;
+                            testWordIndex++;
                             btnCheckSpelling.Enabled = false;
+                            numberOfTries = 3;
                         }
                         if (spellCheckResult == true)
                         {
                             lblSentence.ForeColor = Color.Green;
                             lblSentence.Text = "Correct!  Click on the audio button for the next word";
-                            testWordIndex--;
+                            testWordIndex++;
                             score++;
                             lblScore.Text = "Score: " + score;
                             numberOfTries = 3;
@@ -188,5 +191,6 @@ namespace SpellingGame
         {
             System.Windows.Forms.MessageBox.Show("test");
         }
+
     }
 }

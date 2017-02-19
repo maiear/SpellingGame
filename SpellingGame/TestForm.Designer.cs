@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pictureBoxWord = new System.Windows.Forms.PictureBox();
             this.txtSpelling = new System.Windows.Forms.TextBox();
             this.lblSpelling = new System.Windows.Forms.Label();
-            this.testTimer = new System.Windows.Forms.Timer(this.components);
             this.btnCheckSpelling = new System.Windows.Forms.Button();
             this.btnAudio = new System.Windows.Forms.Button();
             this.lblSentence = new System.Windows.Forms.Label();
-            this.lblWordCount = new System.Windows.Forms.Label();
             this.btnFeedback = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWord)).BeginInit();
@@ -73,7 +70,7 @@
             // 
             // btnCheckSpelling
             // 
-            this.btnCheckSpelling.Location = new System.Drawing.Point(97, 238);
+            this.btnCheckSpelling.Location = new System.Drawing.Point(131, 240);
             this.btnCheckSpelling.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckSpelling.Name = "btnCheckSpelling";
             this.btnCheckSpelling.Size = new System.Drawing.Size(105, 26);
@@ -105,14 +102,6 @@
             this.lblSentence.Text = "Sentence goes here";
             this.lblSentence.Click += new System.EventHandler(this.lblSentence_Click);
             // 
-            // lblWordCount
-            // 
-            this.lblWordCount.AutoSize = true;
-            this.lblWordCount.Location = new System.Drawing.Point(372, 89);
-            this.lblWordCount.Name = "lblWordCount";
-            this.lblWordCount.Size = new System.Drawing.Size(0, 13);
-            this.lblWordCount.TabIndex = 8;
-            // 
             // btnFeedback
             // 
             this.btnFeedback.Location = new System.Drawing.Point(319, 219);
@@ -128,7 +117,7 @@
             this.lblScore.AutoSize = true;
             this.lblScore.Location = new System.Drawing.Point(337, 184);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(35, 13);
+            this.lblScore.Size = new System.Drawing.Size(45, 13);
             this.lblScore.TabIndex = 10;
             this.lblScore.Text = "lblScore";
             // 
@@ -139,7 +128,6 @@
             this.ClientSize = new System.Drawing.Size(444, 281);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnFeedback);
-            this.Controls.Add(this.lblWordCount);
             this.Controls.Add(this.lblSentence);
             this.Controls.Add(this.btnAudio);
             this.Controls.Add(this.btnCheckSpelling);
@@ -148,7 +136,7 @@
             this.Controls.Add(this.pictureBoxWord);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TestForm";
-            this.Text = "Test in progress! - Time goes here maybe";
+            this.Text = "Test in progress!";
             this.Load += new System.EventHandler(this.TestForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWord)).EndInit();
             this.ResumeLayout(false);
@@ -160,11 +148,9 @@
         private System.Windows.Forms.PictureBox pictureBoxWord;
         private System.Windows.Forms.TextBox txtSpelling;
         private System.Windows.Forms.Label lblSpelling;
-        private System.Windows.Forms.Timer testTimer;
         private System.Windows.Forms.Button btnCheckSpelling;
         private System.Windows.Forms.Button btnAudio;
         private System.Windows.Forms.Label lblSentence;
-        private System.Windows.Forms.Label lblWordCount;
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Label lblScore;
     }
