@@ -25,11 +25,12 @@ namespace SpellingGame
         private int testWordIndex = 0;
         private static int numberOfTries = 3;
         private bool lockScore;
-        private int timerMin = 0;
-        private int timerSec = 0;
+        private int timerMin = 2;
+        private int timerSec = 59;
         private List<long> wordIdentList = new List<long>();
         private List<Data.Word> missedWords = new List<Data.Word>();
         private List<Data.Word> testWordBank = new List<Data.Word>();
+        private List<Data.Rule> wordsandRules = new List<Data.Rule>();
 
         private void TestWordsForm_Load()
         {
@@ -50,6 +51,7 @@ namespace SpellingGame
             btnFeedback.Enabled = false;
             lblSentence.Text = "Click Start Test to begin.";
             lblScore.Text = "Score: " + score;
+            lblResult.Text = "";
             timer1.Interval = 1000;//this equals a 1 second interval
             timer1.Tick += OnTimeEvent;//
         }
@@ -92,7 +94,7 @@ namespace SpellingGame
             if (testWordIndex < 0)
             {
 
-                lblSentence.Text = "You have finished the test. Click on Review Missed Items.";
+                lblSentence.Text = "You have finished the test. Click on review missed words >";
                 btnFeedback.Enabled = true;
                 btnAudio.Enabled = false;
                 txtSpelling.Enabled = false;
@@ -114,13 +116,13 @@ namespace SpellingGame
 
                         if (spellCheckResult == false && numberOfTries > 0)
                         {
-                            lblSentence.ForeColor = Color.Red;
-                            lblSentence.Text = "Incorrect!  Number of tries left: " + (numberOfTries - 1);
+                            lblResult.ForeColor = Color.Red;
+                            lblResult.Text = "Incorrect! " + (numberOfTries -1) + " tries left!";
                             numberOfTries--;
                         }
                         if (spellCheckResult == false && numberOfTries == 0)
                         {
-                            lblSentence.Text = "That was your last chance!";
+                            lblResult.Text = "No tries left, sorry!";
                             testWordIndex++;
                             numberOfTries = 3;
                             missedWords.Add(word);
@@ -128,8 +130,9 @@ namespace SpellingGame
                         }
                         if (spellCheckResult == true && lockScore == false)
                         {
-                            lblSentence.ForeColor = Color.Green;
-                            lblSentence.Text = "Correct!";
+                            lblResult.ForeColor = Color.Green;
+                            string correct = "Correct!";
+                            lblResult.Text = string.Format("{0}", correct.PadLeft(18,' '));
                             testWordIndex++;
                             score++;
                             lblScore.Text = "Score: " + score;
@@ -220,31 +223,31 @@ namespace SpellingGame
 
         private void displayFeedback()
         {
-            String wordsAndRules = "";
+            string missedWordList = "";
 
-           for (int i = 0; i < missedWords.Count(); i++) {
-                Data.Word theWord = missedWords.ElementAt(i);
-                wordsAndRules += theWord.Word1 + "\n";
+            for (int i = 0; i < missedWords.Count(); i++) {
+
+                missedWordList += missedWords.ElementAt(i).Word1.ToString() + "\n";
             }
 
-            System.Windows.Forms.MessageBox.Show(wordsAndRules);
+            System.Windows.Forms.MessageBox.Show(missedWordList);
         }
 
         private void OnTimeEvent(object sender, EventArgs e)
         {
             Invoke(new Action(() =>
             {
-                timerSec += 1;
-                if (timerSec == 60)
+                timerSec -= 1;
+                if (timerSec == 0)
                 {
-                    timerSec = 0;
-                    timerMin += 1;
+                    timerSec = 59;
+                    timerMin -= 1;
                 }
-                if (timerMin > 1)
+                if (timerMin < 1)
                 {
                     lbltimerDisplay.ForeColor = Color.Red;
                 }
-                if (timerMin == 1)
+                if (timerMin == 0 && timerSec == 1)
                 {
                     timer1.Stop();
                     endTest();
@@ -260,11 +263,26 @@ namespace SpellingGame
             btnStartTest.Enabled = false;
             txtSpelling.Text = "";
             btnAudio.Enabled = false;
-            lblSentence.Text = "Your test is over. Click review missed words -->";
+            lblSentence.Text = "Your test is over. Click review missed words >";
             btnFeedback.Enabled = true;
         }
 
-        private void timerDisplay_TextChanged(object sender, EventArgs e)
+        private void lblTimer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblResult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblScore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSpelling_TextChanged(object sender, EventArgs e)
         {
 
         }
