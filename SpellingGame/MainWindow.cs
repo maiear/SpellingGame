@@ -47,11 +47,23 @@ namespace SpellingGame
             
         }
 
-        
-        
-                
-            
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+            using (var db = new Data.Database())
+            {
+                // Get the list of words as objects
+                List<Data.Word> allWords = db.Words.ToList();
+
+                foreach (string line in File.ReadAllLines(@"C:\Users\Maie\OneDrive\Spelling Game\Pictures\Path.txt"))
+                {
+                    string[] columns = line.Split(',');
+                    Data.Word word = allWords.Single(w => w.WordId == int.Parse(columns[0]));
+                    word.Image = File.ReadAllBytes(@"C:\Users\Maie\OneDrive\Spelling Game\Pictures\" + columns[1]);
+                    db.SaveChanges();
+                }
+            }
+        }
     }
 
 }
