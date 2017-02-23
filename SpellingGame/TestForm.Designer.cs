@@ -41,13 +41,17 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbltimerDisplay = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.txtDate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWord)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxWord
             // 
             this.pictureBoxWord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxWord.Location = new System.Drawing.Point(82, 18);
+            this.pictureBoxWord.Location = new System.Drawing.Point(82, 72);
             this.pictureBoxWord.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxWord.Name = "pictureBoxWord";
             this.pictureBoxWord.Size = new System.Drawing.Size(382, 231);
@@ -58,7 +62,7 @@
             // lblSpelling
             // 
             this.lblSpelling.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.lblSpelling.Location = new System.Drawing.Point(18, 309);
+            this.lblSpelling.Location = new System.Drawing.Point(18, 360);
             this.lblSpelling.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSpelling.Name = "lblSpelling";
             this.lblSpelling.Size = new System.Drawing.Size(147, 19);
@@ -68,7 +72,7 @@
             // btnStartTest
             // 
             this.btnStartTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnStartTest.Location = new System.Drawing.Point(239, 346);
+            this.btnStartTest.Location = new System.Drawing.Point(239, 401);
             this.btnStartTest.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartTest.Name = "btnStartTest";
             this.btnStartTest.Size = new System.Drawing.Size(112, 76);
@@ -81,7 +85,7 @@
             // 
             this.btnAudio.BackgroundImage = global::SpellingGame.Properties.Resources.audio_icon;
             this.btnAudio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAudio.Location = new System.Drawing.Point(601, 18);
+            this.btnAudio.Location = new System.Drawing.Point(601, 60);
             this.btnAudio.Margin = new System.Windows.Forms.Padding(2);
             this.btnAudio.Name = "btnAudio";
             this.btnAudio.Size = new System.Drawing.Size(81, 61);
@@ -93,7 +97,7 @@
             // 
             this.lblSentence.AutoSize = true;
             this.lblSentence.Font = new System.Drawing.Font("Rockwell", 13.25F);
-            this.lblSentence.Location = new System.Drawing.Point(17, 263);
+            this.lblSentence.Location = new System.Drawing.Point(17, 318);
             this.lblSentence.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSentence.Name = "lblSentence";
             this.lblSentence.Size = new System.Drawing.Size(170, 20);
@@ -104,7 +108,7 @@
             // btnFeedback
             // 
             this.btnFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFeedback.Location = new System.Drawing.Point(571, 339);
+            this.btnFeedback.Location = new System.Drawing.Point(572, 394);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Size = new System.Drawing.Size(146, 81);
             this.btnFeedback.TabIndex = 9;
@@ -116,7 +120,7 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.lblScore.Location = new System.Drawing.Point(598, 261);
+            this.lblScore.Location = new System.Drawing.Point(598, 318);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(84, 21);
             this.lblScore.TabIndex = 10;
@@ -125,7 +129,7 @@
             // 
             // txtSpelling
             // 
-            this.txtSpelling.Location = new System.Drawing.Point(173, 311);
+            this.txtSpelling.Location = new System.Drawing.Point(173, 362);
             this.txtSpelling.Name = "txtSpelling";
             this.txtSpelling.Size = new System.Drawing.Size(254, 20);
             this.txtSpelling.TabIndex = 11;
@@ -136,7 +140,7 @@
             // 
             this.lblTimer.AutoSize = true;
             this.lblTimer.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.lblTimer.Location = new System.Drawing.Point(585, 98);
+            this.lblTimer.Location = new System.Drawing.Point(585, 141);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(60, 21);
             this.lblTimer.TabIndex = 13;
@@ -147,7 +151,7 @@
             // 
             this.lbltimerDisplay.AutoSize = true;
             this.lbltimerDisplay.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.lbltimerDisplay.Location = new System.Drawing.Point(640, 99);
+            this.lbltimerDisplay.Location = new System.Drawing.Point(640, 141);
             this.lbltimerDisplay.Name = "lbltimerDisplay";
             this.lbltimerDisplay.Size = new System.Drawing.Size(56, 21);
             this.lbltimerDisplay.TabIndex = 14;
@@ -157,18 +161,58 @@
             // 
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.lblResult.Location = new System.Drawing.Point(548, 172);
+            this.lblResult.Location = new System.Drawing.Point(548, 221);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(88, 21);
             this.lblResult.TabIndex = 15;
             this.lblResult.Text = "lblResult";
             this.lblResult.Click += new System.EventHandler(this.lblResult_Click);
             // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Rockwell", 14.25F);
+            this.lblUsername.Location = new System.Drawing.Point(29, 23);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(99, 21);
+            this.lblUsername.TabIndex = 16;
+            this.lblUsername.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(137, 22);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(156, 20);
+            this.txtUsername.TabIndex = 17;
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForUserInfo);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Rockwell", 14.25F);
+            this.lblDate.Location = new System.Drawing.Point(324, 22);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(51, 21);
+            this.lblDate.TabIndex = 18;
+            this.lblDate.Text = "Date";
+            // 
+            // txtDate
+            // 
+            this.txtDate.Location = new System.Drawing.Point(387, 22);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(115, 20);
+            this.txtDate.TabIndex = 19;
+            this.txtDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForUserInfo);
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 447);
+            this.ClientSize = new System.Drawing.Size(804, 503);
+            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lbltimerDisplay);
             this.Controls.Add(this.lblTimer);
@@ -203,5 +247,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbltimerDisplay;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.TextBox txtDate;
     }
 }

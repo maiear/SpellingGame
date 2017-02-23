@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,13 +21,17 @@ namespace SpellingGame
         }
 
         private Data.Word word;
+        private Data.Score scoreData;
         private int bankFillCount = 0;
-        private int score = 0;
+        private long score = 0;
+        private string nameUser = "";
+        private string dateTest = "";
         private int testWordIndex = 0;
         private static int numberOfTries = 3;
         private bool lockScore;
         private int timerMin = 2;
         private int timerSec = 59;
+        private bool minuteFlag = false;
         private List<long> wordIdentList = new List<long>();
         private List<Data.Word> missedWords = new List<Data.Word>();
         private List<Data.Word> testWordBank = new List<Data.Word>();
@@ -47,9 +52,9 @@ namespace SpellingGame
             
             txtSpelling.Enabled = false;
             btnAudio.Enabled = false;
-            btnStartTest.Enabled = true;
+            btnStartTest.Enabled = false;
             btnFeedback.Enabled = false;
-            lblSentence.Text = "Click Start Test to begin.";
+            lblSentence.Text = "Enter Username and Date above. Click Start Test to begin.";
             lblScore.Text = "Score: " + score;
             lblResult.Text = "";
             timer1.Interval = 1000;//this equals a 1 second interval
@@ -87,7 +92,7 @@ namespace SpellingGame
                         pictureBoxWord.Image = null;
                     }
                     // Show sentence
-                    lblSentence.ForeColor = Color.Black;
+                    lblSentence.Text = "";
                     lblSentence.Text = word.Sentence;
                 }
 
@@ -127,6 +132,7 @@ namespace SpellingGame
                             numberOfTries = 3;
                             missedWords.Add(word);
                             loadNextTestWord();
+                            lblResult.Text = "";
                         }
                         if (spellCheckResult == true && lockScore == false)
                         {
@@ -139,6 +145,7 @@ namespace SpellingGame
                             numberOfTries = 3;
                             lockScore = true;
                             loadNextTestWord();
+                            lblResult.Text = "";
                         }
                     }
                 }
@@ -209,10 +216,37 @@ namespace SpellingGame
                
                 if (txtSpelling.Text.Equals(""))
                 {
-                    lblSentence.Text = "You did not type an answer.  At least try!";
+                    lblSentence.Text = "You did not enter anything.";
                 }
 
                 checkSpelling();
+            }
+        }
+
+        private void checkForUserInfo(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+
+                if (txtUsername.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Enter your username");
+                }
+
+                if (txtDate.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Enter the date");
+                }
+                
+                if (!txtDate.Text.Equals("") && !txtUsername.Equals(""))
+                {
+                    this.nameUser = txtUsername.Text;
+                    this.dateTest = txtDate.Text;
+                    txtUsername.Enabled = false;
+                    txtDate.Enabled = false;
+                    btnStartTest.Enabled = true;
+                }  
             }
         }
 
@@ -238,16 +272,21 @@ namespace SpellingGame
             Invoke(new Action(() =>
             {
                 timerSec -= 1;
-                if (timerSec == 0)
+                if (timerSec == 0 && minuteFlag == false)
                 {
                     timerSec = 59;
                     timerMin -= 1;
                 }
+                if (timerSec == 0 && minuteFlag == true)
+                {
+                    timerSec = 0;
+                }
                 if (timerMin < 1)
                 {
                     lbltimerDisplay.ForeColor = Color.Red;
+                    minuteFlag = true;
                 }
-                if (timerMin == 0 && timerSec == 1)
+                if (timerMin == 0 && timerSec == 0)
                 {
                     timer1.Stop();
                     endTest();
@@ -259,12 +298,23 @@ namespace SpellingGame
 
         private void endTest()
         {
+            timerSec = 0;
             txtSpelling.Enabled = false;
             btnStartTest.Enabled = false;
             txtSpelling.Text = "";
             btnAudio.Enabled = false;
-            lblSentence.Text = "Your test is over. Click review missed words >";
+            lblSentence.Text = "Your test is over. Review your missed items. >>";
             btnFeedback.Enabled = true;
+
+            scoreData = new Data.Score();
+
+            using (var dbase = new Data.Database())
+            {
+                scoreData.Username = nameUser;
+                scoreData.Points = score;
+                scoreData.Date = dateTest;
+                dbase.Scores.Add(scoreData);
+            }
         }
 
         private void lblTimer_Click(object sender, EventArgs e)
