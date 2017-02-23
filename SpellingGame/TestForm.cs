@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,9 @@ namespace SpellingGame
         }
 
         private Data.Word word;
-        private int score = 0;
+        private long score = 0;
+        private string nameUser = "";
+        private string dateTest = "";
         private int testWordIndex = 0;
         private static int numberOfTries = 3;
         private bool lockScore;
@@ -39,9 +42,9 @@ namespace SpellingGame
             
             txtSpelling.Enabled = false;
             btnAudio.Enabled = false;
-            btnStartTest.Enabled = true;
+            btnStartTest.Enabled = false;
             btnFeedback.Enabled = false;
-            lblSentence.Text = "Click Start Test to begin.";
+            lblSentence.Text = "Enter Username and Date above. Click Start Test to begin.";
             lblScore.Text = "Score: " + score;
             lblResult.Text = "";
             timer1.Interval = 1000;//this equals a 1 second interval
@@ -59,11 +62,10 @@ namespace SpellingGame
                 word = db.Words.Find(currentTestWordID);
             }
 
-            if (testWordIndex >= 0)
-            {
-
-                if (word.Image == null)
-                {
+            if (testWordIndex >= 0) { 
+                
+                    if (word.Image == null)
+                    {
                     pictureBoxWord.BackColor = Color.Beige;
                     // Hides the previous picture
                     pictureBoxWord.Image = null;
@@ -106,7 +108,6 @@ namespace SpellingGame
                 {
                     if (!txtSpelling.Text.Equals(""))
                     {
-                        correctLabel.Hide();
 
                         spellCheckResult = spellCheck(txtSpelling.Text, word.Word1);
 
@@ -116,12 +117,10 @@ namespace SpellingGame
                             lblResult.Text = "Incorrect! " + (numberOfTries -1) + " tries left!";
                             lblResult.Show();
                             numberOfTries--;
-                            
                         }
                         if (spellCheckResult == false && numberOfTries == 0)
                         {
                             lblResult.Text = "No tries left, sorry!";
-                            lblResult.Show();
                             testWordIndex++;
                             numberOfTries = 3;
                             missedWords.Add(word);
@@ -130,23 +129,20 @@ namespace SpellingGame
                         }
                         if (spellCheckResult == true && lockScore == false)
                         {
-                            correctLabel.ForeColor = Color.Green;
+                            lblResult.ForeColor = Color.Green;
                             string correct = "Correct!";
-                            correctLabel.Text = string.Format("{0}", correct.PadLeft(18,' '));
-                            correctLabel.Show();
+                            lblResult.Text = string.Format("{0}", correct.PadLeft(18,' '));
                             testWordIndex++;
                             score++;
                             lblScore.Text = "Score: " + score;
                             numberOfTries = 3;
                             lockScore = true;
-                            
-
                             loadNextTestWord();
                         }
                     }
                 }
 
-                else
+                if (word == null)
                 {
                     lblSentence.Text = "Press return to load a new word.";
                 }
@@ -184,37 +180,63 @@ namespace SpellingGame
 
         private void playAudioForCurrentWord()
         {
-            // Start new thread
-            Task.Run(() =>
-            {
-                // Speaks the word
-                SpeechSynthesizer synthesizer = new SpeechSynthesizer();
-                synthesizer.Speak("The word is: " + word.Word1);
-            });
-            
+            // Speaks the word
+            SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+            synthesizer.Speak("The word is: " + word.Word1);
+        }
+
+        private void lblSentence_Click(object sender, EventArgs e)
+        {
+
         }
 
 
+        }
+
+        private void pictureBoxWord_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void checkForReturnKey(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (int)Keys.Enter)
+            if (e.KeyChar == (char)13)
             {
                 e.Handled = true;
-                errorLabel.Hide();
-                
                
                 if (txtSpelling.Text.Equals(""))
                 {
-                    
-                    errorLabel.Text = "You did not type an answer.  At least try!";
-                    errorLabel.Show();
-                }
-                else
-                {
-                    checkSpelling();
+                    lblSentence.Text = "You did not enter anything.";
                 }
 
+                checkSpelling();
+            }
+        }
+
+        private void checkForUserInfo(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+
+                if (txtUsername.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Enter your username");
+                }
+
+                if (txtDate.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Enter the date");
+                }
                 
+                if (!txtDate.Text.Equals("") && !txtUsername.Equals(""))
+                {
+                    this.nameUser = txtUsername.Text;
+                    this.dateTest = txtDate.Text;
+                    txtUsername.Enabled = false;
+                    txtDate.Enabled = false;
+                    btnStartTest.Enabled = true;
+                }  
             }
         }
 
@@ -232,16 +254,11 @@ namespace SpellingGame
                 missedWordList += missedWords.ElementAt(i).Word1.ToString() + "\n";
             }
 
-            // Create and show View Scores Form
-            TestResultsForm viewresultsfrm = new TestResultsForm(missedWords);
-            viewresultsfrm.Show();
+            System.Windows.Forms.MessageBox.Show(missedWordList);
         }
 
-        DateTime time = DateTime.MinValue.AddMinutes(3);
         private void OnTimeEvent(object sender, EventArgs e)
         {
-            
-
             Invoke(new Action(() =>
             {
                 time = time.AddSeconds(-1);
@@ -257,6 +274,8 @@ namespace SpellingGame
                     timer1.Stop();
                     endTest();
                 }
+                lbltimerDisplay.Text = string.Format("{0}:{1}", timerMin.ToString().PadLeft(2, '0'),
+                    timerSec.ToString().PadLeft(2, '0'));
             }));
         }
 
@@ -268,6 +287,16 @@ namespace SpellingGame
             btnAudio.Enabled = false;
             lblSentence.Text = "Your test is over. Click review missed words >";
             btnFeedback.Enabled = true;
+
+            scoreData = new Data.Score();
+
+            using (var dbase = new Data.Database())
+            {
+                scoreData.Username = nameUser;
+                scoreData.Points = score;
+                scoreData.Date = dateTest;
+                dbase.Scores.Add(scoreData);
+            }
         }
 
         
