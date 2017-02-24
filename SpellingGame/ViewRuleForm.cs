@@ -34,8 +34,8 @@ namespace SpellingGame
             {
 
                 string lesson = db.Rules.Single(r => r.RuleId == _ruleNumber).RuleDescription;
-
-                webBrowser.Document.Body.InnerHtml = lesson;
+                webBrowser.Document.BackColor = Color.FromArgb(240, 240, 240);
+                webBrowser.Document.Body.InnerHtml = "<div style=\"font-family:Rockwell\">" + lesson + "</div>";
 
 
 

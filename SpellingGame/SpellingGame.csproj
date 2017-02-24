@@ -106,6 +106,12 @@
     <Compile Include="Data\Rule.cs" />
     <Compile Include="Data\Score.cs" />
     <Compile Include="Data\Word.cs" />
+	<Compile Include="HighScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighScoreForm.Designer.cs">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LessonsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+	<Compile Include="TestResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestResultsForm.Designer.cs">
+      <DependentUpon>TestResultsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewRuleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +162,9 @@
     <Compile Include="ViewScoresForm.Designer.cs">
       <DependentUpon>ViewScoresForm.cs</DependentUpon>
     </Compile>
+	<EmbeddedResource Include="HighScoreForm.resx">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LessonsForm.resx">
       <DependentUpon>LessonsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +189,9 @@
     </Compile>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+	<EmbeddedResource Include="TestResultsForm.resx">
+      <DependentUpon>TestResultsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewRuleForm.resx">
       <DependentUpon>ViewRuleForm.cs</DependentUpon>

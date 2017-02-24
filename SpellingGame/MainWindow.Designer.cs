@@ -35,6 +35,7 @@
             this.ViewScoresButton = new System.Windows.Forms.Button();
             this.PracticeButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,9 +102,20 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 30);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(503, 414);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ViewScoresButton);
             this.Controls.Add(this.TestButton);
             this.Controls.Add(this.PracticeButton);
@@ -127,6 +139,7 @@
         private System.Windows.Forms.Button ViewScoresButton;
         private System.Windows.Forms.Button PracticeButton;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -36,11 +36,7 @@ namespace SpellingGame
 
         }
 
-        private void LessonsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Selectbutton_Click(object sender, EventArgs e)
         {
             // Create and show View Rule Form (The index of the rule is passed to the next Form, whish is the id of the rule in the database)

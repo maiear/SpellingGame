@@ -33,18 +33,16 @@
             // 
             // webBrowser
             // 
-            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser.Location = new System.Drawing.Point(40, 39);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(1209, 588);
+            this.webBrowser.Size = new System.Drawing.Size(1128, 515);
             this.webBrowser.TabIndex = 0;
             this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             // 
             // ViewRuleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1209, 588);
             this.Controls.Add(this.webBrowser);
             this.Name = "ViewRuleForm";

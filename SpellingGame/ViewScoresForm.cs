@@ -16,5 +16,10 @@ namespace SpellingGame
         {
             InitializeComponent();
         }
+
+        private void ViewScoresForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

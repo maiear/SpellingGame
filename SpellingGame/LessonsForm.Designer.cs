@@ -72,7 +72,6 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Name = "LessonsForm";
-            this.Load += new System.EventHandler(this.LessonsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
