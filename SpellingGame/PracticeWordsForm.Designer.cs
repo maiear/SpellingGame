@@ -97,6 +97,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(570, 130);
             this.webBrowser1.TabIndex = 11;
+            this.webBrowser1.Visible = false;
             this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
             // 
             // nextbutton
@@ -108,6 +109,7 @@
             this.nextbutton.TabIndex = 14;
             this.nextbutton.Text = "Next";
             this.nextbutton.UseVisualStyleBackColor = true;
+            this.nextbutton.Click += new System.EventHandler(this.nextbutton_Click);
             // 
             // label4
             // 
@@ -161,7 +163,7 @@
             this.Controls.Add(this.btnAudio);
             this.Controls.Add(this.pictureBoxPractice);
             this.Name = "PracticeWordsForm";
-            this.Text = "PracticeWordsForm";
+            this.Text = "Practice";
             this.Load += new System.EventHandler(this.PracticeWordsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPractice)).EndInit();
             this.ResumeLayout(false);
