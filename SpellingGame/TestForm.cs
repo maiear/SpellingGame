@@ -22,9 +22,7 @@ namespace SpellingGame
         }
 
         private Data.Word word;
-        private Data.Score scoreData;
         private long score = 0;
-        private string nameUser = "";
         private int testWordIndex = 0;
         private static int numberOfTries = 3;
         private bool lockScore;
@@ -210,32 +208,7 @@ namespace SpellingGame
             }
         }
 
-        //private void checkForUserInfo(object sender, KeyPressEventArgs e)
-        //{
-        //    if (e.KeyChar == (char)13)
-        //    {
-        //        e.Handled = true;
-
-        //        if (txtUsername.Text.Equals(""))
-        //        {
-        //            System.Windows.Forms.MessageBox.Show("Enter your username");
-        //        }
-
-        //        if (txtDate.Text.Equals(""))
-        //        {
-        //            System.Windows.Forms.MessageBox.Show("Enter the date");
-        //        }
-                
-        //        if (!txtDate.Text.Equals("") && !txtUsername.Equals(""))
-        //        {
-        //            this.nameUser = txtUsername.Text;
-        //            this.dateTest = txtDate.Text;
-        //            txtUsername.Enabled = false;
-        //            txtDate.Enabled = false;
-        //            btnStartTest.Enabled = true;
-        //        }  
-        //    }
-        //}
+        
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
@@ -285,12 +258,7 @@ namespace SpellingGame
             lblSentence.Text = "Your test is over. Review your missed items. >>";
             btnFeedback.Enabled = true;
 
-            //scoreData = new Data.Score();
-
-            //using (var dbase = new Data.Database())
-            //{
-            //    
-            //}
+ 
 
             using (var db = new Data.Database())
             {
