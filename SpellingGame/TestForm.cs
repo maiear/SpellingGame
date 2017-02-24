@@ -251,7 +251,7 @@ namespace SpellingGame
                 missedWordList += missedWords.ElementAt(i).Word1.ToString() + "\n";
             }
 
-            // Create and show View Scores Form
+            // Create and show Test Results Form
             TestResultsForm viewresultsfrm = new TestResultsForm(missedWords);
             viewresultsfrm.Show();
         }
@@ -289,30 +289,34 @@ namespace SpellingGame
 
             //using (var dbase = new Data.Database())
             //{
-            //    scoreData.Username = nameUser;
-            //    scoreData.Points = score;
-            //    scoreData.Date = dateTest;
-            //    dbase.Scores.Add(scoreData);
+            //    
             //}
 
-            //using (var db = new Data.Database())
-            //{
-            //    int count = db.Scores.Count();
+            using (var db = new Data.Database())
+            {
+                int count = db.Scores.Count();
 
-            //    if (count == 10)
-            //    {
-            //        long min = db.Scores.Min(s => s.Points);
-            //        long newScore;
-            //        if (min < newScore)
-            //        {
-            //            db.
-            //        }
-            //    }
-            //    else
-            //    {
+                if (count == 10)
+                {
+                    Data.Score minScore = db.Scores.OrderBy(s => s.Points).FirstOrDefault();
 
-            //    }
-            //}
+                    long min = db.Scores.Min(s => s.Points);
+                    
+                    if (min < score)
+                    {
+                        // Create and High Scores Form
+                        HighScoreForm viewresultsfrm = new HighScoreForm(score, minScore);
+                        viewresultsfrm.Show();
+
+                    }
+                }
+                else
+                {
+                    // Create and High Scores Form
+                    HighScoreForm viewresultsfrm = new HighScoreForm(score);
+                    viewresultsfrm.Show();
+                }
+            }
         }
 
         

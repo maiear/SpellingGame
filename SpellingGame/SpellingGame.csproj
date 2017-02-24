@@ -78,6 +78,12 @@
     <Compile Include="Data\Rule.cs" />
     <Compile Include="Data\Score.cs" />
     <Compile Include="Data\Word.cs" />
+    <Compile Include="HighScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighScoreForm.Designer.cs">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LessonsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     <Compile Include="ViewScoresForm.Designer.cs">
       <DependentUpon>ViewScoresForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HighScoreForm.resx">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LessonsForm.resx">
       <DependentUpon>LessonsForm.cs</DependentUpon>
     </EmbeddedResource>
