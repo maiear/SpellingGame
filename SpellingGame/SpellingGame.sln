@@ -5,16 +5,26 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellingGame", "SpellingGame.csproj", "{E1A8BC76-058F-4907-A4E5-46D81FF34B51}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "SetupWizard\Setup\Setup.vdproj", "{563C2BBB-4011-4DF7-AB8E-7621453122BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E1A8BC76-058F-4907-A4E5-46D81FF34B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1A8BC76-058F-4907-A4E5-46D81FF34B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A8BC76-058F-4907-A4E5-46D81FF34B51}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E1A8BC76-058F-4907-A4E5-46D81FF34B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1A8BC76-058F-4907-A4E5-46D81FF34B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A8BC76-058F-4907-A4E5-46D81FF34B51}.Release|x86.ActiveCfg = Release|Any CPU
+		{563C2BBB-4011-4DF7-AB8E-7621453122BE}.Debug|Any CPU.ActiveCfg = Debug
+		{563C2BBB-4011-4DF7-AB8E-7621453122BE}.Debug|x86.ActiveCfg = Debug
+		{563C2BBB-4011-4DF7-AB8E-7621453122BE}.Release|Any CPU.ActiveCfg = Release
+		{563C2BBB-4011-4DF7-AB8E-7621453122BE}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
