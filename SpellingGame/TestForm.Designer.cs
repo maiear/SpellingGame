@@ -127,7 +127,6 @@
             this.txtSpelling.Name = "txtSpelling";
             this.txtSpelling.Size = new System.Drawing.Size(379, 26);
             this.txtSpelling.TabIndex = 11;
-            
             this.txtSpelling.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForReturnKey);
             // 
             // lblTimer

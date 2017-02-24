@@ -22,15 +22,16 @@ namespace SpellingGame
         }
 
         private Data.Word word;
+        private Data.Score scoreData;
         private long score = 0;
         private string nameUser = "";
-        private string dateTest = "";
         private int testWordIndex = 0;
         private static int numberOfTries = 3;
         private bool lockScore;
         private long[] wordIdentList;
         private List<Data.Word> missedWords = new List<Data.Word>();
         private List<Data.Rule> wordsandRules = new List<Data.Rule>();
+        private DateTime time = DateTime.MinValue.AddMinutes(3);
 
         private void TestWordsForm_Load()
         {
@@ -42,9 +43,8 @@ namespace SpellingGame
             
             txtSpelling.Enabled = false;
             btnAudio.Enabled = false;
-            btnStartTest.Enabled = false;
             btnFeedback.Enabled = false;
-            lblSentence.Text = "Enter Username and Date above. Click Start Test to begin.";
+            lblSentence.Text = "Click Start Test to begin.";
             lblScore.Text = "Score: " + score;
             lblResult.Text = "";
             timer1.Interval = 1000;//this equals a 1 second interval
@@ -82,7 +82,6 @@ namespace SpellingGame
 
                 }
                 // Show sentence
-                lblSentence.ForeColor = Color.Black;
                 lblSentence.Text = word.Sentence;
                
                 lblResult.Hide();
@@ -108,6 +107,7 @@ namespace SpellingGame
                 {
                     if (!txtSpelling.Text.Equals(""))
                     {
+                        correctLabel.Hide();
 
                         spellCheckResult = spellCheck(txtSpelling.Text, word.Word1);
 
@@ -121,17 +121,18 @@ namespace SpellingGame
                         if (spellCheckResult == false && numberOfTries == 0)
                         {
                             lblResult.Text = "No tries left, sorry!";
+                            lblResult.Show();
                             testWordIndex++;
                             numberOfTries = 3;
                             missedWords.Add(word);
                             loadNextTestWord();
-                            
                         }
                         if (spellCheckResult == true && lockScore == false)
                         {
-                            lblResult.ForeColor = Color.Green;
+                            correctLabel.ForeColor = Color.Green;
                             string correct = "Correct!";
-                            lblResult.Text = string.Format("{0}", correct.PadLeft(18,' '));
+                            correctLabel.Text = string.Format("{0}", correct.PadLeft(18,' '));
+                            correctLabel.Show();
                             testWordIndex++;
                             score++;
                             lblScore.Text = "Score: " + score;
@@ -141,8 +142,7 @@ namespace SpellingGame
                         }
                     }
                 }
-
-                if (word == null)
+                else
                 {
                     lblSentence.Text = "Press return to load a new word.";
                 }
@@ -180,22 +180,13 @@ namespace SpellingGame
 
         private void playAudioForCurrentWord()
         {
-            // Speaks the word
-            SpeechSynthesizer synthesizer = new SpeechSynthesizer();
-            synthesizer.Speak("The word is: " + word.Word1);
-        }
-
-        private void lblSentence_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        }
-
-        private void pictureBoxWord_Click(object sender, EventArgs e)
-        {
-
+            // Start new thread
+            Task.Run(() =>
+            {
+                // Speaks the word
+                SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+                synthesizer.Speak("The word is: " + word.Word1);
+            });
         }
 
         private void checkForReturnKey(object sender, KeyPressEventArgs e)
@@ -203,42 +194,48 @@ namespace SpellingGame
             if (e.KeyChar == (char)13)
             {
                 e.Handled = true;
-               
+                errorLabel.Hide();
+
+
                 if (txtSpelling.Text.Equals(""))
                 {
-                    lblSentence.Text = "You did not enter anything.";
-                }
 
-                checkSpelling();
+                    errorLabel.Text = "You did not enter anything.";
+                    errorLabel.Show();
+                }
+                else
+                {
+                    checkSpelling();
+                }
             }
         }
 
-        private void checkForUserInfo(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                e.Handled = true;
+        //private void checkForUserInfo(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == (char)13)
+        //    {
+        //        e.Handled = true;
 
-                if (txtUsername.Text.Equals(""))
-                {
-                    System.Windows.Forms.MessageBox.Show("Enter your username");
-                }
+        //        if (txtUsername.Text.Equals(""))
+        //        {
+        //            System.Windows.Forms.MessageBox.Show("Enter your username");
+        //        }
 
-                if (txtDate.Text.Equals(""))
-                {
-                    System.Windows.Forms.MessageBox.Show("Enter the date");
-                }
+        //        if (txtDate.Text.Equals(""))
+        //        {
+        //            System.Windows.Forms.MessageBox.Show("Enter the date");
+        //        }
                 
-                if (!txtDate.Text.Equals("") && !txtUsername.Equals(""))
-                {
-                    this.nameUser = txtUsername.Text;
-                    this.dateTest = txtDate.Text;
-                    txtUsername.Enabled = false;
-                    txtDate.Enabled = false;
-                    btnStartTest.Enabled = true;
-                }  
-            }
-        }
+        //        if (!txtDate.Text.Equals("") && !txtUsername.Equals(""))
+        //        {
+        //            this.nameUser = txtUsername.Text;
+        //            this.dateTest = txtDate.Text;
+        //            txtUsername.Enabled = false;
+        //            txtDate.Enabled = false;
+        //            btnStartTest.Enabled = true;
+        //        }  
+        //    }
+        //}
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
@@ -254,7 +251,9 @@ namespace SpellingGame
                 missedWordList += missedWords.ElementAt(i).Word1.ToString() + "\n";
             }
 
-            System.Windows.Forms.MessageBox.Show(missedWordList);
+            // Create and show View Scores Form
+            TestResultsForm viewresultsfrm = new TestResultsForm(missedWords);
+            viewresultsfrm.Show();
         }
 
         private void OnTimeEvent(object sender, EventArgs e)
@@ -274,8 +273,6 @@ namespace SpellingGame
                     timer1.Stop();
                     endTest();
                 }
-                lbltimerDisplay.Text = string.Format("{0}:{1}", timerMin.ToString().PadLeft(2, '0'),
-                    timerSec.ToString().PadLeft(2, '0'));
             }));
         }
 
@@ -285,18 +282,37 @@ namespace SpellingGame
             btnStartTest.Enabled = false;
             txtSpelling.Text = "";
             btnAudio.Enabled = false;
-            lblSentence.Text = "Your test is over. Click review missed words >";
+            lblSentence.Text = "Your test is over. Review your missed items. >>";
             btnFeedback.Enabled = true;
 
-            scoreData = new Data.Score();
+            //scoreData = new Data.Score();
 
-            using (var dbase = new Data.Database())
-            {
-                scoreData.Username = nameUser;
-                scoreData.Points = score;
-                scoreData.Date = dateTest;
-                dbase.Scores.Add(scoreData);
-            }
+            //using (var dbase = new Data.Database())
+            //{
+            //    scoreData.Username = nameUser;
+            //    scoreData.Points = score;
+            //    scoreData.Date = dateTest;
+            //    dbase.Scores.Add(scoreData);
+            //}
+
+            //using (var db = new Data.Database())
+            //{
+            //    int count = db.Scores.Count();
+
+            //    if (count == 10)
+            //    {
+            //        long min = db.Scores.Min(s => s.Points);
+            //        long newScore;
+            //        if (min < newScore)
+            //        {
+            //            db.
+            //        }
+            //    }
+            //    else
+            //    {
+
+            //    }
+            //}
         }
 
         
