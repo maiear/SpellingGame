@@ -77,7 +77,7 @@
             this.s1.AutoSize = true;
             this.s1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s1.ForeColor = System.Drawing.Color.Silver;
-            this.s1.Location = new System.Drawing.Point(105, 158);
+            this.s1.Location = new System.Drawing.Point(105, 167);
             this.s1.Name = "s1";
             this.s1.Size = new System.Drawing.Size(43, 46);
             this.s1.TabIndex = 2;
@@ -88,17 +88,18 @@
             this.s2.AutoSize = true;
             this.s2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(127)))), ((int)(((byte)(50)))));
-            this.s2.Location = new System.Drawing.Point(110, 198);
+            this.s2.Location = new System.Drawing.Point(107, 216);
             this.s2.Name = "s2";
             this.s2.Size = new System.Drawing.Size(33, 36);
             this.s2.TabIndex = 3;
             this.s2.Text = "3";
+            this.s2.Click += new System.EventHandler(this.s2_Click);
             // 
             // s3
             // 
             this.s3.AutoSize = true;
             this.s3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s3.Location = new System.Drawing.Point(114, 232);
+            this.s3.Location = new System.Drawing.Point(114, 255);
             this.s3.Name = "s3";
             this.s3.Size = new System.Drawing.Size(24, 25);
             this.s3.TabIndex = 3;
@@ -108,7 +109,7 @@
             // 
             this.s4.AutoSize = true;
             this.s4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s4.Location = new System.Drawing.Point(114, 252);
+            this.s4.Location = new System.Drawing.Point(114, 280);
             this.s4.Name = "s4";
             this.s4.Size = new System.Drawing.Size(24, 25);
             this.s4.TabIndex = 3;
@@ -118,7 +119,7 @@
             // 
             this.s5.AutoSize = true;
             this.s5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s5.Location = new System.Drawing.Point(114, 272);
+            this.s5.Location = new System.Drawing.Point(114, 305);
             this.s5.Name = "s5";
             this.s5.Size = new System.Drawing.Size(24, 25);
             this.s5.TabIndex = 3;
@@ -128,7 +129,7 @@
             // 
             this.s6.AutoSize = true;
             this.s6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s6.Location = new System.Drawing.Point(114, 292);
+            this.s6.Location = new System.Drawing.Point(111, 330);
             this.s6.Name = "s6";
             this.s6.Size = new System.Drawing.Size(24, 25);
             this.s6.TabIndex = 3;
@@ -138,7 +139,7 @@
             // 
             this.s7.AutoSize = true;
             this.s7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s7.Location = new System.Drawing.Point(114, 312);
+            this.s7.Location = new System.Drawing.Point(111, 355);
             this.s7.Name = "s7";
             this.s7.Size = new System.Drawing.Size(24, 25);
             this.s7.TabIndex = 3;
@@ -148,7 +149,7 @@
             // 
             this.s8.AutoSize = true;
             this.s8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s8.Location = new System.Drawing.Point(114, 332);
+            this.s8.Location = new System.Drawing.Point(111, 380);
             this.s8.Name = "s8";
             this.s8.Size = new System.Drawing.Size(24, 25);
             this.s8.TabIndex = 3;
@@ -158,7 +159,7 @@
             // 
             this.s9.AutoSize = true;
             this.s9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s9.Location = new System.Drawing.Point(100, 352);
+            this.s9.Location = new System.Drawing.Point(97, 404);
             this.s9.Name = "s9";
             this.s9.Size = new System.Drawing.Size(36, 25);
             this.s9.TabIndex = 3;
@@ -166,39 +167,43 @@
             // 
             // lblHighScore1
             // 
+            this.lblHighScore1.AutoSize = true;
             this.lblHighScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHighScore1.ForeColor = System.Drawing.Color.Gold;
             this.lblHighScore1.Location = new System.Drawing.Point(170, 108);
             this.lblHighScore1.Name = "lblHighScore1";
-            this.lblHighScore1.Size = new System.Drawing.Size(369, 58);
+            this.lblHighScore1.Size = new System.Drawing.Size(54, 58);
             this.lblHighScore1.TabIndex = 4;
-            this.lblHighScore1.Text = "1";            
+            this.lblHighScore1.Text = "1";
             // 
             // lblHighScore2
             // 
+            this.lblHighScore2.AutoSize = true;
             this.lblHighScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHighScore2.ForeColor = System.Drawing.Color.Silver;
-            this.lblHighScore2.Location = new System.Drawing.Point(175, 158);
+            this.lblHighScore2.Location = new System.Drawing.Point(175, 167);
             this.lblHighScore2.Name = "lblHighScore2";
-            this.lblHighScore2.Size = new System.Drawing.Size(364, 46);
+            this.lblHighScore2.Size = new System.Drawing.Size(43, 46);
             this.lblHighScore2.TabIndex = 5;
             this.lblHighScore2.Text = "2";
             // 
             // lblHighScore3
             // 
+            this.lblHighScore3.AutoSize = true;
             this.lblHighScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHighScore3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(127)))), ((int)(((byte)(50)))));
-            this.lblHighScore3.Location = new System.Drawing.Point(180, 198);
+            this.lblHighScore3.Location = new System.Drawing.Point(177, 216);
             this.lblHighScore3.Name = "lblHighScore3";
-            this.lblHighScore3.Size = new System.Drawing.Size(359, 36);
+            this.lblHighScore3.Size = new System.Drawing.Size(33, 36);
             this.lblHighScore3.TabIndex = 6;
             this.lblHighScore3.Text = "3";
+            this.lblHighScore3.Click += new System.EventHandler(this.lblHighScore3_Click);
             // 
             // lblHighScore4
             // 
             this.lblHighScore4.AutoSize = true;
             this.lblHighScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore4.Location = new System.Drawing.Point(181, 232);
+            this.lblHighScore4.Location = new System.Drawing.Point(181, 255);
             this.lblHighScore4.Name = "lblHighScore4";
             this.lblHighScore4.Size = new System.Drawing.Size(24, 25);
             this.lblHighScore4.TabIndex = 7;
@@ -208,7 +213,7 @@
             // 
             this.lblHighScore5.AutoSize = true;
             this.lblHighScore5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore5.Location = new System.Drawing.Point(181, 252);
+            this.lblHighScore5.Location = new System.Drawing.Point(181, 280);
             this.lblHighScore5.Name = "lblHighScore5";
             this.lblHighScore5.Size = new System.Drawing.Size(24, 25);
             this.lblHighScore5.TabIndex = 8;
@@ -218,7 +223,7 @@
             // 
             this.lblHighScore6.AutoSize = true;
             this.lblHighScore6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore6.Location = new System.Drawing.Point(181, 272);
+            this.lblHighScore6.Location = new System.Drawing.Point(181, 305);
             this.lblHighScore6.Name = "lblHighScore6";
             this.lblHighScore6.Size = new System.Drawing.Size(24, 25);
             this.lblHighScore6.TabIndex = 9;
@@ -228,7 +233,7 @@
             // 
             this.lblHighScore7.AutoSize = true;
             this.lblHighScore7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore7.Location = new System.Drawing.Point(181, 292);
+            this.lblHighScore7.Location = new System.Drawing.Point(181, 330);
             this.lblHighScore7.Name = "lblHighScore7";
             this.lblHighScore7.Size = new System.Drawing.Size(24, 25);
             this.lblHighScore7.TabIndex = 10;
@@ -238,7 +243,7 @@
             // 
             this.lblHighScore8.AutoSize = true;
             this.lblHighScore8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore8.Location = new System.Drawing.Point(181, 312);
+            this.lblHighScore8.Location = new System.Drawing.Point(181, 355);
             this.lblHighScore8.Name = "lblHighScore8";
             this.lblHighScore8.Size = new System.Drawing.Size(24, 25);
             this.lblHighScore8.TabIndex = 11;
@@ -248,7 +253,7 @@
             // 
             this.lblHighScore9.AutoSize = true;
             this.lblHighScore9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore9.Location = new System.Drawing.Point(181, 332);
+            this.lblHighScore9.Location = new System.Drawing.Point(181, 380);
             this.lblHighScore9.Name = "lblHighScore9";
             this.lblHighScore9.Size = new System.Drawing.Size(24, 25);
             this.lblHighScore9.TabIndex = 12;
@@ -258,7 +263,7 @@
             // 
             this.lblHighScore10.AutoSize = true;
             this.lblHighScore10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore10.Location = new System.Drawing.Point(181, 352);
+            this.lblHighScore10.Location = new System.Drawing.Point(181, 404);
             this.lblHighScore10.Name = "lblHighScore10";
             this.lblHighScore10.Size = new System.Drawing.Size(36, 25);
             this.lblHighScore10.TabIndex = 13;
@@ -268,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 428);
+            this.ClientSize = new System.Drawing.Size(597, 462);
             this.Controls.Add(this.lblHighScore10);
             this.Controls.Add(this.lblHighScore9);
             this.Controls.Add(this.lblHighScore8);
@@ -291,7 +296,7 @@
             this.Controls.Add(this.s8);
             this.Controls.Add(this.s9);
             this.Name = "ViewScoresForm";
-            this.Text = "ViewScoresForm";
+            this.Text = "High Score Champions!";
             this.Load += new System.EventHandler(this.ViewScoresForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
