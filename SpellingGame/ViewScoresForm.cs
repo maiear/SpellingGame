@@ -19,7 +19,12 @@ namespace SpellingGame
 
         private void ViewScoresForm_Load(object sender, EventArgs e)
         {
+            displayHighScores();
+        }
 
+        private void displayHighScores()
+        {
+            
         }
     }
 }
