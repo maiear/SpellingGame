@@ -76,16 +76,6 @@ namespace SpellingGame
             }               
 
             return orderedHighScores;
-        }
-
-        private void lblHighScore3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void s2_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }

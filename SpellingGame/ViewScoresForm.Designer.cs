@@ -98,7 +98,6 @@
             this.s2.Size = new System.Drawing.Size(33, 36);
             this.s2.TabIndex = 3;
             this.s2.Text = "3";
-            this.s2.Click += new System.EventHandler(this.s2_Click);
             // 
             // s3
             // 
@@ -202,7 +201,6 @@
             this.lblHighScore3.Size = new System.Drawing.Size(33, 36);
             this.lblHighScore3.TabIndex = 6;
             this.lblHighScore3.Text = "3";
-            this.lblHighScore3.Click += new System.EventHandler(this.lblHighScore3_Click);
             // 
             // lblHighScore4
             // 
