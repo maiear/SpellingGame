@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewScoresForm));
             this.scores = new System.Windows.Forms.Label();
             this.s0 = new System.Windows.Forms.Label();
             this.s1 = new System.Windows.Forms.Label();
@@ -49,6 +50,10 @@
             this.lblHighScore8 = new System.Windows.Forms.Label();
             this.lblHighScore9 = new System.Windows.Forms.Label();
             this.lblHighScore10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // scores
@@ -269,11 +274,33 @@
             this.lblHighScore10.TabIndex = 13;
             this.lblHighScore10.Text = "10";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SpellingGame.Properties.Resources.trophy;
+            this.pictureBox1.Location = new System.Drawing.Point(482, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 87);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(103, 87);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // ViewScoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 462);
+            this.ClientSize = new System.Drawing.Size(615, 462);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblHighScore10);
             this.Controls.Add(this.lblHighScore9);
             this.Controls.Add(this.lblHighScore8);
@@ -298,6 +325,8 @@
             this.Name = "ViewScoresForm";
             this.Text = "High Score Champions!";
             this.Load += new System.EventHandler(this.ViewScoresForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +355,7 @@
         private System.Windows.Forms.Label lblHighScore8;
         private System.Windows.Forms.Label lblHighScore9;
         private System.Windows.Forms.Label lblHighScore10;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
