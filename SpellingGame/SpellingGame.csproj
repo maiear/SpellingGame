@@ -226,6 +226,9 @@
     <None Include="Resources\audio-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\trophy.gif" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
