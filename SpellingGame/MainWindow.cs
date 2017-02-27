@@ -59,7 +59,7 @@ namespace SpellingGame
                 {
                     string[] columns = line.Split(',');
                     Data.Word word = allWords.Single(w => w.WordId == int.Parse(columns[0]));
-                    word.Image = File.ReadAllBytes(@"C:\Users\Maie\OneDrive\Spelling Game\Pictures\" + columns[1]);
+                    word.Image = File.ReadAllBytes(@"C:\Users\Maie\OneDrive\Spelling Game\Pictures\Preston Pictures\" + columns[1]);
                     db.SaveChanges();
                 }
             }
