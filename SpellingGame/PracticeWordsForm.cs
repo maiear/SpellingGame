@@ -86,9 +86,10 @@ namespace SpellingGame
         }
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-
+            string html = "<div style=\"font-family:Rockwell\">";
             // Displays the short version of the rules
-            webBrowser1.Document.Body.InnerHtml = rulesHtml;
+            webBrowser1.Document.Body.InnerHtml = html + rulesHtml + "</div>";
+            webBrowser1.Document.BackColor = Color.FromArgb(240, 240, 240);
             webBrowser1.Show();
 
         }
@@ -130,7 +131,7 @@ namespace SpellingGame
             foreach (Data.Rule rule in word.Rules)
             {
                 // Gets the rules of the word
-                rulesHtml += rule.RuleShortVersion;
+                rulesHtml += rule.RuleName + rule.RuleShortVersion;
             }
 
 

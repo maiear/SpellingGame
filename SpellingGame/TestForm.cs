@@ -51,7 +51,6 @@ namespace SpellingGame
 
         private void loadTestWord()
         {
-            // Cycle back through the word IDs chosen from the word bank. testWordIndex is initialized to 562
             long currentTestWordID = wordIdentList.ElementAt(testWordIndex);
 
             //Open a DB connection and pull the word with the matching wordID as the next test item
