@@ -286,6 +286,9 @@ namespace SpellingGame
             }
         }
 
-        
+        private void TestForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
+        }
     }
 }
