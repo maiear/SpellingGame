@@ -35,7 +35,7 @@ namespace SpellingGame
         {
             // Get the id numbers randomized in an array
             Random rnd = new Random();
-            wordIdentList = Enumerable.Range(1, 562).OrderBy(r => rnd.Next(100000)).Select(i=>(long) i).ToArray();
+            wordIdentList = Enumerable.Range(1, 560).OrderBy(r => rnd.Next(100000)).Select(i=>(long) i).ToArray();
             
                
             
