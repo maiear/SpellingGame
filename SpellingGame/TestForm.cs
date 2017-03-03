@@ -225,7 +225,7 @@ namespace SpellingGame
 
             // Create and show Test Results Form
             TestResultsForm viewresultsfrm = new TestResultsForm(missedWords);
-            viewresultsfrm.Show();
+            viewresultsfrm.ShowDialog();
         }
 
         private void OnTimeEvent(object sender, EventArgs e)
@@ -273,7 +273,7 @@ namespace SpellingGame
                     {
                         // Create and High Scores Form
                         HighScoreForm viewresultsfrm = new HighScoreForm(score, minScore);
-                        viewresultsfrm.Show();
+                        viewresultsfrm.ShowDialog();
 
                     }
                 }
@@ -281,7 +281,7 @@ namespace SpellingGame
                 {
                     // Create and High Scores Form
                     HighScoreForm viewresultsfrm = new HighScoreForm(score);
-                    viewresultsfrm.Show();
+                    viewresultsfrm.ShowDialog();
                 }
             }
         }

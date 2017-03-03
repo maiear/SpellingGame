@@ -52,7 +52,7 @@ namespace SpellingGame
 
                 // Create and show View Scores Form
                 ViewScoresForm viewscoresfrm = new ViewScoresForm();
-                viewscoresfrm.Show();
+                viewscoresfrm.ShowDialog();
 
                 this.Hide();
             }
