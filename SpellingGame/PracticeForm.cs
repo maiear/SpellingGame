@@ -65,7 +65,7 @@ namespace SpellingGame
 
                 // Create and show Practice Words Form
                 PracticeWordsForm practiceWordsForm = new PracticeWordsForm(category,numberOfWords);
-                practiceWordsForm.Show();
+                practiceWordsForm.ShowDialog();
 
 
             }

@@ -35,7 +35,7 @@ namespace SpellingGame
         {
             // Get the id numbers randomized in an array
             Random rnd = new Random();
-            wordIdentList = Enumerable.Range(1, 562).OrderBy(r => rnd.Next(100000)).Select(i=>(long) i).ToArray();
+            wordIdentList = Enumerable.Range(1, 560).OrderBy(r => rnd.Next(100000)).Select(i=>(long) i).ToArray();
             
                
             
@@ -51,7 +51,6 @@ namespace SpellingGame
 
         private void loadTestWord()
         {
-            // Cycle back through the word IDs chosen from the word bank. testWordIndex is initialized to 562
             long currentTestWordID = wordIdentList.ElementAt(testWordIndex);
 
             //Open a DB connection and pull the word with the matching wordID as the next test item
@@ -226,7 +225,7 @@ namespace SpellingGame
 
             // Create and show Test Results Form
             TestResultsForm viewresultsfrm = new TestResultsForm(missedWords);
-            viewresultsfrm.Show();
+            viewresultsfrm.ShowDialog();
         }
 
         private void OnTimeEvent(object sender, EventArgs e)
@@ -274,7 +273,7 @@ namespace SpellingGame
                     {
                         // Create and High Scores Form
                         HighScoreForm viewresultsfrm = new HighScoreForm(score, minScore);
-                        viewresultsfrm.Show();
+                        viewresultsfrm.ShowDialog();
 
                     }
                 }
@@ -282,11 +281,14 @@ namespace SpellingGame
                 {
                     // Create and High Scores Form
                     HighScoreForm viewresultsfrm = new HighScoreForm(score);
-                    viewresultsfrm.Show();
+                    viewresultsfrm.ShowDialog();
                 }
             }
         }
 
-        
+        private void TestForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
+        }
     }
 }

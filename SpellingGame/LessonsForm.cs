@@ -41,7 +41,7 @@ namespace SpellingGame
         {
             // Create and show View Rule Form (The index of the rule is passed to the next Form, whish is the id of the rule in the database)
             ViewRuleForm F2 = new ViewRuleForm(listBox1.SelectedIndex + 1);
-            F2.Show();
+            F2.ShowDialog();
         }
     }
 }

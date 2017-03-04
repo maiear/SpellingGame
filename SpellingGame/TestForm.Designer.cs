@@ -201,6 +201,7 @@
             this.Controls.Add(this.pictureBoxWord);
             this.Name = "TestForm";
             this.Text = "Test in progress!";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TestForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWord)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
